@@ -1,0 +1,1 @@
+drop plugin_versions;
