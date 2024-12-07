@@ -1,1 +1,1 @@
-drop ratings;
+drop table ratings;

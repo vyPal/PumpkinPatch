@@ -1,1 +1,1 @@
-drop plugin_versions;
+drop table plugin_versions;

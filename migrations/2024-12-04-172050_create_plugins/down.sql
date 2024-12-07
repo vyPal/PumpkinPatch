@@ -1,1 +1,1 @@
-drop plugins;
+drop table plugins;
