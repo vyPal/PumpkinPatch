@@ -3,20 +3,20 @@
 diesel::table! {
     comments (id) {
         id -> Int4,
-        plugin_id -> Nullable<Int4>,
-        user_id -> Nullable<Int4>,
+        plugin_id -> Int4,
+        user_id -> Int4,
         content -> Text,
-        timestamp -> Nullable<Timestamp>,
+        timestamp -> Timestamp,
     }
 }
 
 diesel::table! {
     plugin_versions (id) {
         id -> Int4,
-        plugin_id -> Nullable<Int4>,
+        plugin_id -> Int4,
         version_number -> Text,
-        release_date -> Nullable<Timestamp>,
-        download_count -> Nullable<Int4>,
+        release_date -> Timestamp,
+        download_count -> Int4,
         windows_url -> Nullable<Text>,
         linux_url -> Nullable<Text>,
         macos_url -> Nullable<Text>,
@@ -27,20 +27,20 @@ diesel::table! {
     plugins (id) {
         id -> Int4,
         name -> Text,
-        description -> Nullable<Text>,
-        author_id -> Nullable<Int4>,
-        publish_date -> Nullable<Timestamp>,
-        last_update_date -> Nullable<Timestamp>,
-        download_count -> Nullable<Int4>,
+        description -> Text,
+        author_id -> Int4,
+        publish_date -> Timestamp,
+        last_update_date -> Timestamp,
+        download_count -> Int4,
     }
 }
 
 diesel::table! {
     ratings (id) {
         id -> Int4,
-        plugin_id -> Nullable<Int4>,
-        user_id -> Nullable<Int4>,
-        rating -> Nullable<Int4>,
+        plugin_id -> Int4,
+        user_id -> Int4,
+        rating -> Int4,
     }
 }
 

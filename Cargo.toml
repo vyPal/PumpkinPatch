@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 actix-web = "4.9.0"
-diesel = { version = "2.2.0", features = ["postgres"] }
+diesel = { version = "2.2.0", features = ["postgres", "chrono"] }
 dotenvy = "0.15"
+chrono = { version = "0.4.38", features = ["serde"] }
 minio = { git = "https://github.com/minio/minio-rs.git" }
