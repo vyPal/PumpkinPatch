@@ -48,8 +48,11 @@ diesel::table! {
     users (id) {
         id -> Int4,
         username -> Text,
+        oidc_id -> Text,
         email -> Text,
-        password_hash -> Text,
+        access_token -> Text,
+        refresh_token -> Nullable<Text>,
+        created_at -> Timestamp,
     }
 }
 

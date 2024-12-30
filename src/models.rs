@@ -1,14 +1,28 @@
 use diesel::prelude::*;
 use chrono::NaiveDateTime;
 
-#[derive(Queryable, Selectable)]
+#[derive(Queryable, Selectable, Identifiable)]
 #[diesel(table_name = crate::schema::users)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct User {
     pub id: i32,
     pub username: String,
+    pub oidc_id: String,
     pub email: String,
-    pub password_hash: String,
+    pub access_token: String,
+    pub refresh_token: Option<String>,
+    pub created_at: NaiveDateTime,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::users)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+pub struct NewUser {
+    pub username: String,
+    pub oidc_id: String,
+    pub email: String,
+    pub access_token: String,
+    pub refresh_token: Option<String>,
 }
 
 #[derive(Queryable, Selectable, Associations)]
